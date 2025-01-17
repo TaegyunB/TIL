@@ -1,9 +1,9 @@
-# CLI(Command Line Interface)란?
+### CLI(Command Line Interface)란?
 - 명령어 기반 인터페이스를 의미함
 - 사용자가 텍스트 명령어를 입력하여 컴퓨터와 상호작용하는 방식의 사용자 인터페이스
 - 그래픽 사용자 인터페이스(GUI, Graphical User Interface)와는 달리, CLI는 텍스트 기반으로 작동
 
-# CLI의 주요 특징
+### CLI의 주요 특징
 - 명령어 입력
     - 사용자는 키보드를 사용해 명령어를 입력하며, 컴퓨터는 명령어를 해석하고 실행함
 - 텍스트 출력
