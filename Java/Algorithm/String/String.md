@@ -67,7 +67,7 @@ String str4 = new String(bytes, StandardCharsets.UTF_8); // "ABC"
 ~~~
 
 ### String 메서드
-<img src="images/image_4" width="400" height="300">
+<img src="images/image_4.png" width="400" height="300">
 
 ### 회문(Palindrome)
 - 앞에서부터 읽는 것과 뒤에서부터 읽는 것이 동일한 문자열
