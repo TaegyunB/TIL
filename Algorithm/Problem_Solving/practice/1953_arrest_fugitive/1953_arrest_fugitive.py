@@ -44,31 +44,33 @@ sys.stdin = open("input.txt", "r")
 
 # 2. 방문 기록을 해야함(visited)
 
+
 def f(N, M, R, C, L):
     q = [(R, C)]
-    v = [[0] * M for _ in range(N)]
-    v[R][C] = 1  # 시간
-    # pos = [0] *(L+1)  # 시간대별 가능 위치 수
+    visited = [[0] * M for _ in range(N)]
+    visited[R][C] = 1
     cnt = 0
-    while q:
+
+    while q:  # q가 빌 때까지
         i, j = q.pop(0)
         cnt += 1
-        # pos[v[i][j]] += 1 # 시간대에 도착하는 칸 번호
-        if v[i][j] < L:  # L초 미만에 도착한 칸이면
-            for x in pipe[tunnel[i][j]]:  # 파이프 모양에 따라 새롭게 진입할 칸 확인
+
+        if visited[i][j] < L:
+            for x in pipe[tunnel[i][j]]:
                 ni = i + di[x]
                 nj = j + dj[x]
-                if 0 <= ni < N and 0 <= nj < M and tunnel[ni][nj] != 0 and v[ni][nj] == 0 and (x + 2) % 4 in pipe[
-                    tunnel[ni][nj]]:
-                    v[ni][nj] = v[i][j] + 1  # 이동할 수 있는 칸에 시간
+
+                # (x+2) % 4 in pipe[tunnel[ni][nj]]: 현재 파이프에서 다음 파이프로 이동할 때, 두 파이프가 실제로 연결되어 있는지 확인하는 역할
+                if 0 <= ni < N and 0 <= nj < M and tunnel[ni][nj] != 0 and visited[ni][nj] == 0 and (x+2) % 4 in pipe[tunnel[ni][nj]]:
+                    visited[ni][nj] = visited[i][j] + 1
                     q.append((ni, nj))
-    # return sum(pos)
+
     return cnt
 
 
 di = [0, 1, 0, -1]
 dj = [1, 0, -1, 0]
-pipe = [[], [0, 1, 2, 3], [1, 3], [0, 2], [0, 3], [0, 1], [1, 2], [2, 3], ]
+pipe = [[], [0, 1, 2, 3], [1, 3], [0, 2], [0, 3], [0, 1], [1, 2], [2, 3]]
 
 T = int(input())
 for tc in range(1, T + 1):
@@ -76,7 +78,3 @@ for tc in range(1, T + 1):
     tunnel = [list(map(int, input().split())) for _ in range(N)]
     r = f(N, M, R, C, L)
     print('#{} {}'.format(tc, r))
-
-
-
-
