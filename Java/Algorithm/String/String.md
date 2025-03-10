@@ -7,7 +7,7 @@
     - 95개의 출력 문자 (영어문자, 숫자, 기호)
 
 ### ASCII 코드 일부
-<img src="images/image_1" width="400" height="300">
+<img src="images/image_1.png" width="400" height="300">
 
 ### 유니코드(Unicode)
 - ASCII 확장만으로는 전 세계 모든 문자를 표현하기 어려움
@@ -40,14 +40,15 @@
     - 문자열의 길이(count)
     - 문자열 데이터의 시작점(offset)
     - 실제 문자열 배열에 대한 참조(value)
-    <img src="images/image_2" width="400" height="300">
+    <img src="images/image_2.png" width="400" height="300">
 
 ### String 클래스 특징
 - 불변(Immutable): 한 번 생성된 String 객체는 내부 내용을 변경할 수 없음
 - 힙(Heap)에 저장 + String Pool
     -> 동일 리터럴(내용이 같고, 코드 상 동일한 "Hello")이면 이미 존재하는 객체를 재사용
 - 내부 구조(UTF-16 기반)
-<img src="images/image_3" width="400" height="300">
+<img src="images/image_3.png" width="400" height="300">
+
 
 ### String 생성
 1. 리터럴(Literal) 사용
