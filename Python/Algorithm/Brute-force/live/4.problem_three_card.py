@@ -6,17 +6,10 @@ path = []
 result = 0
 
 def count_three():
-    if path[0] == path[1] == path[2]:
-        return True
-
-    if path[1] == path[2] == path[3]:
-        return True
-
-    if path[2] == path[3] == path[4]:
-        return True
-
+    if path[0] == path[1] == path[2]: return True
+    if path[1] == path[2] == path[3]: return True
+    if path[2] == path[3] == path[4]: return True
     return False
-
 
 def recur(cnt):
     global result
@@ -34,4 +27,3 @@ def recur(cnt):
         path.pop()
 
 recur(0)
-
