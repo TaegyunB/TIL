@@ -29,6 +29,7 @@ def f(i, N):
                 used[j] = 1
                 p[i] = a[j]
                 f(i+1, N)
+                # 돌아오면서 해야 할 로직
                 used[j] = 0
 
 
@@ -36,7 +37,7 @@ T = int(input())
 
 for tc in range(1, T+1):
     a = list(map(int, input()))
-    used = [0] * 6
+    used = [0] * 6  # visited랑 비슷한 방식
     p = [0] * 6
     ans = "Lose"
 
