@@ -17,6 +17,7 @@ def is_babygin():
     else:
         return False
 
+
 def f(i, N):
     global ans
     if i == N:
@@ -27,7 +28,7 @@ def f(i, N):
         for j in range(N):
             if used[j] == 0:
                 used[j] = 1
-                p[i] = a[j]
+                p[i] = a[i]
                 f(i+1, N)
                 # 돌아오면서 해야 할 로직
                 used[j] = 0
