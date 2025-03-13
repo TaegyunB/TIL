@@ -4,16 +4,24 @@ sys.stdin = open("input1.txt", "r")
 
 # run 검사 - 연속된 3개 숫자
 def check_run(arr):
-    sorted_arr = sorted(arr)
+    counts = [0] * 10
 
-    for i in range(len(sorted_arr) - 2):
-        if sorted_arr[i+1] == sorted_arr[i] + 1 and sorted_arr[i+2] == sorted_arr[i] + 2:
-            return True
+    for x in arr:
+        counts[x] += 1
+
+    cnt = 0
+    for i in range(len(counts)):
+        if counts[i] > 0:
+            cnt += 1
+
+            if cnt >= 3:
+                return True
+        else:
+            cnt = 0
 
     return False
 
-
-# triplet 검사
+# triplet 검사 - 같은 숫자가 3개 이상
 def check_triplet(arr):
     sorted_arr = sorted(arr)
 
