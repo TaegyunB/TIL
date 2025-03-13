@@ -11,7 +11,7 @@ def f(k, N, M):  # 이전까지의 교환횟수
 
     else:
         for i in range(M-1):
-            for j in range(i+1, M):  # 왜 1+1에서 시작?
+            for j in range(i+1, M):
                 card[i], card[j] = card[j], card[i]
                 tmp = int(''.join(card))
 
