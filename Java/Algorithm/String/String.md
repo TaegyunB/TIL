@@ -88,3 +88,56 @@ public static int atoi(String strNumber) {
     return value;
 }
 ~~~
+
+## 패턴 매칭(Pattern Matching)
+- 문자열(또는 다른 잦료)에서 특정 규칙(패턴)을 찾아내거나, 해당 패턴의 일치 여부를 검사하는 과정
+- 특정 키워드를 검색
+- 사용자 입력이 형식에 맞게 작성하였는지 검사
+- 데이터 추출 등에서 활용할 수 있음
+- 정규 표현식을 이용할 수 있음
+
+### 패턴 매칭 알고리즘
+- Brute Force 알고리즘
+- Boyer-Moore 알고리즘
+- Rabin-Karp 알고리즘
+- KMP(Knuth-Morris-Pratt) 알고리즘
+
+### Brute Force 알고리즘
+- 본문 문자열을 처음부터 끝까지 차례대로 순회하면서 패턴 내의 문자들을 전부 비교하는 방식으로 동작
+<img src="images/image_5.png" width="400" height="300">
+
+- Brute Force 알고리즘 의사코드
+~~~Java
+// p[]: 찾을 패턴: iss
+// t[]: 전체 텍스트: This iss a book
+// M: 찾을 패턴의 길이
+// N: 전체 텍스트의 길이
+// i: t의 인덱스
+// j: p의 인덱스
+
+BruteForce(char[] p, char[] t) {
+    i <- 0, j <- 0
+    while(j < M and i < N) {
+        if(t[i] != p[j]) {
+            i <- i - j;
+            j <- -1;
+        i <- i + 1, i <- j + 1
+        }
+    }
+    if (j==M) return i - M;
+    else return -1;
+}
+
+~~~
+
+### Brute Force 알고리즘 시간 복잡도
+- 최악의 경우 시간 복잡도는 텍스트의 모든 위치에서 패턴을 비교해야 하므로 O(MN)이 됨
+- 본문의 길이 10,000 / 패턴의 길이 80 이라면 최악의 경우 약 10,000 * 80 = 800,000 번의 비교가 일어남
+- 비교횟수를 줄일 수 있는 방법은 없는가?
+
+### Boyer-Moore 알고리즘
+- 오른쪽에서 왼쪽으로 비교
+- 오른쪽 끝에 있는 문자가 불일치 하고, 해당 문자가 패턴 내에 존재하지 않는 경우에는 패턴의 길이만큼 이동하여 검사
+<img src="images/image_6.png" width="400" height="300">
+<img src="images/image_7.png" width="400" height="300">
+<img src="images/image_8.png" width="400" height="300">
