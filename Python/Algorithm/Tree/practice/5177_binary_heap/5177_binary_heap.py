@@ -37,4 +37,4 @@ for tc in range(1, T+1):
         ans += tree[c]  # 현재 노드 값 더하기
         c //= 2  # 부모 노드로 이동
 
-    print(f'{tc} {ans}')
+    print(f'#{tc} {ans}')
