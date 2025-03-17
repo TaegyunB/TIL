@@ -19,7 +19,7 @@ def hoare_partition(left, right):
 
     arr[left], arr[j] = arr[j], arr[left]  # 피벗과 j 위치의 요소를 교환
 
-    return j  # 피벗의 최정 위치 반환
+    return j  # 피벗의 최종 위치 반환
 
 
 def quick_sort(left, right):
