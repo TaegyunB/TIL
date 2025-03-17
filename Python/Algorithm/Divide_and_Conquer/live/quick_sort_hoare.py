@@ -8,21 +8,24 @@ arr = [3, 2, 4, 6, 9, 1, 8, 7, 5]
 # 이미 정렬된 배열이나 역순으로 정렬된 배열에서 최악의 성능을 보일 수 있음
 def hoare_partition1(left, right):
     pivot = arr[left]  # 피벗을 제일 왼쪽 요소로 설정
-    i = left + 1
-    j = right
+    i = left + 1  # i는 왼쪽에서 오른쪽으로 이동하며 피벗보다 큰 값을 찾음
+    j = right  # j는 오른쪽에서 왼쪽으로 이동하며 피벗보다 작은 값을 찾음
 
     while i <= j:
+        # i를 증가시키며 피벗보다 큰 값을 찾음
         while i <= j and arr[i] <= pivot:
             i += 1
 
+        # j를 감소시키며 피벗보다 작은 값을 찾음
         while i <= j and arr[j] >= pivot:
             j -= 1
 
+        # 두 값이 발견되고 i가 j보다 작으면 두 요소를 교환함
         if i < j:
             arr[i], arr[j] = arr[j], arr[i]
 
-    arr[left], arr[j] = arr[j], arr[left]
-    return j
+    arr[left], arr[j] = arr[j], arr[left]  # 파티셔닝이 완료되면 피벗과 j 위치의 요소를 교환함
+    return j  # 피벗의 새 위치인 j를 반환함. 이 위치를 기준으로 배열이 분할됨
 
 
 # 피벗: 제일 오른쪽 요소
