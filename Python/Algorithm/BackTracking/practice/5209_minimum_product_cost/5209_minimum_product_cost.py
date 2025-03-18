@@ -19,7 +19,7 @@ def dfs(row, cost):
     else:
         for i in range(N):  # 각 열에 대해
             if not visited[i]:  #  visited[i] = True 아직 방문하지 않았다면
-                # 방문 표시
+                visited[i] = True  # 방문 표시
                 dfs(row + 1, cost + arr[row][i])  # 재귀호출
                 visited[i] = False  # 백트래킹: 방문 해제
 
