@@ -71,3 +71,47 @@ Find-Set(x)
 - Path compression
   - Find-Set을 행하는 과정에서 만나는 모든 노드들이 직접 root를 가리키도록 포인터를 바꾸어 줌
   
+<img src="images/image_13.png" width="400" height="300">
+<img src="images/image_14.png" width="400" height="300">
+<img src="images/image_15.png" width="400" height="300">
+
+### Make_Set() 연산
+- Make_Set(x): 유일한 멤버 x를 포함하는 새로운 집합을 생성하는 연산
+~~~
+p[x]: 노드 x의 부모 저장
+rank[x]: 루트 노드가 x인 트리의 랭크 값 저장
+
+Make_Set(x)
+  p[x] <- x
+  rank[x] <- 0
+~~~
+
+### Find_Set() 연산
+- Find_Set(x): x를 포함하는 집합을 찾는 오퍼레이션
+~~~
+Find_Set(x)
+  IF x != p[x]  // x가 루트가 아닌 경우
+    p[x] <- Find_Set(p[x])
+  RETURN p[x]
+~~~
+
+- Find_set 연산은 특정 노드에서 루트까지의 경로를 찾아가면서 노드의 부모 정보를 갱신함
+
+### Union 연산
+- Union(x, y): x와 y를 포함하는 두 집합을 통합하는 오퍼레이션
+~~~
+Union(x, y)
+  Link(Find_Set(x), Find_Set(y))
+~~~
+
+~~~
+Link(x, y)
+  IF rank[x] > rank[y]  // rank는 트리의 높이
+    p[y] <- x
+  ELSE
+    p[x] <- y
+    IF rank[x] == rank[y]
+      rank[y]++
+~~~ 
+
+
