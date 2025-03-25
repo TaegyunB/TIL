@@ -15,6 +15,7 @@
 # articles/views.py
 
 def index(request):
+    # 딕셔너리 형태
     context = {
         'name': 'Jane',
     }
