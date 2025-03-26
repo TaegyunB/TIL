@@ -2,7 +2,7 @@
 - model 클래스의 변경사항(필드 생성, 수정, 삭제 등)을 DB에 최종 반영하는 방법
 
 ### Migrations 과정
-<img src="images/image_8.png" width="400" height="300">
+<img src="images/image_8.png" width="600" height="300">
 
 ### Migrations 핵심 명령어 2가지
 ~~~bash
