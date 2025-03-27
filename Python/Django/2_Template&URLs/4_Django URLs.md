@@ -9,11 +9,11 @@
 - 템플릿의 많은 부분이 중복되고, URL의 일부만 변경되는 상황이라면 계속해서 비슷한 URL과 템플릿을 작성해 나가야 할까?
 <img src="images/image_9.png" width="400" heigth="300">
 
-### Varible Routing
+### Variable Routing
 - variable: 변수, routing: 경로
 - URL 일부에 변수를 포함시키는 것(변수는 view 함수의 인자로 전달할 수 있음)
 
-#### Varible Routing 작성법
+#### Variable Routing 작성법
 <path_converter:variable_name>
 - path_converter에는 타입
 - variable_name에는 변수명
