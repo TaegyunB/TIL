@@ -19,3 +19,15 @@
 ### ModelForm을 적용한 create 로직
 <img src="images/image_2.png" width="600" height="400">
 
+## save 메서드
+- 데이터베이스 객체를 만들고 저장하는 ModelForm의 인스턴스 메서드
+
+### save() 메서드가 생성과 수정을 구분하는 법
+- 키워드 인자 instance 여부를 통해 생성할 지, 수정할 지를 결정
+<img src="images/image_3.png" width="600" height="400">
+
+### Django Form 정리
+- "사용자로부터 데이터를 수집하고 처리하기 위한 강력하고 유연한 도구"
+- HTML form의 생성, 데이터 유효성 검사 및 처리를 쉽게 할 수 있도록 도움
+
+
