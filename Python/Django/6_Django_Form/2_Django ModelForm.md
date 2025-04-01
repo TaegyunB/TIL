@@ -1,9 +1,15 @@
 ## Django ModelForm
 ### Form
-- 사용자 입력 데이터를 DB에 저장하지 않을 때(ex. 검색, 로그인)
+- 사용자 입력 데이터를 DB에 저장하지 않을 때(ex. 검색, 로그인)  
 
 ### ModelForm
 - 사용자 입력 데이터를 DB에 저장해야 할 때(ex. 게시글 작성, 회원가입)
+- Model과 연결된 Form을 자동으로 생성해주는 기능을 제공
+- Form + Model
+
+#### ModelForm class 정의
+- 기존 ArticleForm 클래스 수정
+<img src="images/image_16.png" width="600" height="400">
 
 ## Meta class
 - ModelForm의 정보를 작성하는 곳
@@ -18,6 +24,19 @@
 ## ModelFrom 적용
 ### ModelForm을 적용한 create 로직
 <img src="images/image_2.png" width="600" height="400">
+<img src="images/image_17.png" width="600" height="400">
+
+### is_valid()
+- 여러 유효성 검사를 실행하고, 데이터가 유효한지 여부를 Boolean으로 반환
+
+#### 공백 데이터가 유효하지 않은 이유와 에러메시지가 출력되는 과정
+<img src="images/image_18.png" width="600" height="400">
+
+#### ModelForm을 적용한 edit 로직
+<img src="images/image_19.png" width="600" height="400">
+
+#### ModelForm을 적용한 update 로직
+<img src="images/image_20.png" width="600" height="400">
 
 ## save 메서드
 - 데이터베이스 객체를 만들고 저장하는 ModelForm의 인스턴스 메서드
