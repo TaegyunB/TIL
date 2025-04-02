@@ -12,7 +12,19 @@
 - 프로젝트의 특정 요구사항에 맞춰 사용자 모델을 확장할 수 있음
 - 예를 들어 이메일을 username으로 사용하거나, 다른 추가 필드를 포함시킬 수 있음
 
-### Custom User Model로 대체하기(1/3)
+### Custom User Model로 대체하기
+- AbstractUser 클래스를 상속받는 커스텀 User 클래스 작성
+- 기존 User 클래스도 AbstractUser를 상속받기 때문에 커스텀 User 클래스도 기존 User 클래스와 완전히 같은 모습을 가지게 됨
+<img src="images/image_21.png" width="600" height="400">
+
+- django 프로젝트에서 사용하는 기본 User 모델을 우리가 작성한 User 모델로 사용할 수 있도록 AUTH_USER_MODEL 값을 변경
+    - 수정 전 기본 값은 'auth.User'
+<img src="images/image_22.png" width="600" height="400">
+
+- admin site에 대체한 User 모델 등록
+    - 기본 User 모델이 아니기 때문에 등록하지 않으면 admin 페이지에 출력되지 않기 때문
+    
+<img src="images/image_23.png" width="600" height="400">
 
 ## AUTH_USER_MODEL
 - Django 프로젝트의 User를 나타내는 데 사용하는 모델을 지정하는 속성
