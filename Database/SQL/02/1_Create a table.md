@@ -3,11 +3,11 @@
 
 ### CREATE TABLE syntax
 ~~~SQL
-CREATE TABLE table_name {
+CREATE TABLE table_name (
     column_1 data_type constraints,
     column_2 data_type constraints,
     ...,
-};
+);
 ~~~
 - 각 필드에 적용할 데이터 타입 작성
 - 테이블 및 필드에 대한 제약조건(constraints) 작성
