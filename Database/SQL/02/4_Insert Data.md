@@ -13,6 +13,7 @@ VALUES (v1, v2, ...);
 #### INSERT 활용 1
 - articles 테이블에 다음과 같은 데이터 입력
 <img src="images/image_5.png" width="600" height="400">
+
 ~~~SQL
 INSERT INTO articles(title, content, createdAt)
 VALUES('hello', 'world', '2000-01-01');
@@ -21,6 +22,7 @@ VALUES('hello', 'world', '2000-01-01');
 #### INSERT 활용 2
 - articles 테이블에 다음과 같은 데이터 추가 입력
 <img src="images/image_6.png" width="600" height="400">
+
 ~~~SQL
 INSERT INTO articles(title, content, createdAt)
 VALUES
