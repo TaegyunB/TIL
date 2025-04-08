@@ -15,11 +15,11 @@ CREATE TABLE table_name (
 ### CREATE TABLE 활용
 - examples 테이블 생성 및 확인
 ~~~SQL
-CREATE TABLE examples {
+CREATE TABLE examples (
 ExamId INTEGER PRIMARY KEY AUTOINCREMENT,
 LastName VARCHAR(50) NOT NULL,
 FirstName VARCHAR(50) NOT NULL
-};
+);
 ~~~
 
 ### PRAGMA
